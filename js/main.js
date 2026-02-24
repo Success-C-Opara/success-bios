@@ -73,4 +73,48 @@ $(window).scroll(function(e){
 		}
 	}
 
+
 });
+
+/* arch starts */
+ function openProject(type) {
+
+    var modal = document.getElementById("projectModal");
+    var title = document.getElementById("projectTitle");
+    var details = document.getElementById("projectDetails");
+
+    if (type === "cyber") {
+        title.innerHTML = "Cybersecurity Project";
+        details.innerHTML = "Performed penetration testing using Nmap and Wireshark. Conducted vulnerability scanning and secured enterprise systems.";
+    }
+
+    if (type === "devops") {
+        title.innerHTML = "DevOps Automation Project";
+        details.innerHTML = "Built CI/CD pipeline using Docker and GitHub Actions. Automated deployments and reduced manual release time.";
+    }
+
+	 if (type === "cloud") {
+        title.innerHTML = "Cloud Computing";
+        details.innerHTML = "Designed and deployed a highly available multi-tier application on Amazon Web Services with load balancing and auto-scaling: Implemented Infrastructure as Code using Terraform and configured monitoring, IAM security, and automated deployments.";
+    }
+
+	 if (type === "software") {
+        title.innerHTML = "Software Development";
+        details.innerHTML = "Developed a full-stack web application with RESTful APIs, authentication, and database integration Implemented responsive UI, backend validation, and optimized database queries for performance.";
+    }
+
+    modal.classList.add("active");
+}
+
+function closeProject() {
+    document.getElementById("projectModal").classList.remove("active");
+}
+
+/* Close when clicking outside panel */
+document.getElementById("projectModal").addEventListener("click", function(e) {
+    if (e.target === this) {
+        closeProject();
+    }
+});  
+
+/* arch ends */
