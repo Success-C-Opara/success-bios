@@ -952,16 +952,127 @@
         /* success  user work*/
 /* success ends */
 
+/* omale start userwork */
 
-/* omale start  userwork */
+/* Resume Section Background */
+.success-resume-section {
+    background-color: #1a1a1a; 
+    padding: 100px 0;
+    color: #ffffff;
+}
 
+.resume-main-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
 
-/* omale ends  */
+.resume-main-title span {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.success-grid {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.success-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.column-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+/* The Outlined Card Style */
+.resume-card {
+    border: 2px solid #444; 
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    background: transparent;
+    /* Transition placed here for smooth entry and exit of hover state */
+    transition: transform 0.3s ease, border-color 0.3s ease; 
+}
+
+.resume-card:hover {
+    border-color: #ffffff;
+    transform: translateY(-5px); 
+}
+
+.card-date {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.card-role {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.card-text {
+    color: #999; 
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.card-org {
+    color: #ffffff;
+    font-size: 16px;
+    display: block;
+}
+
+/* Tech Stack Icons */
+.tech-icons-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.tech-icons-row img {
+    width: 40px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.tech-icons-row img:hover {
+    opacity: 1;
+}
+
+/* Responsive Stacking */
+@media (max-width: 768px) {
+    .success-grid {
+        flex-direction: column;
+    }
+    
+    .resume-main-title {
+        font-size: 32px;
+    }
+}
+
+.skills-mini-section {
+    text-align: center;
+    margin-top: 60px;
+}
+/* omale ends */
 
 
 /* arch user work */
 
 /* arch ends  */
+
+
 
 
 
