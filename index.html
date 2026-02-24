@@ -14,7 +14,8 @@
 	<link rel="stylesheet" href="css/slick.css">
 	<title>Author</title>
 </head>
-<body>
+
+
 
 	<!-- Navigation  mide-->
 	<nav class="site-navigation">
@@ -102,76 +103,53 @@
 	</section>
 	<!-- About me end david -->
 
-	<!-- Books and CD arch -->
-	<section class="fh5co-books">
-		<div class="site-container">
-			<h2 class="universal-h2 universal-h2-bckg">New Books And CD</h2>
-			<div class="books">
-				<div class="single-book">
-					<a href="#" class="single-book__img">
-						<img src="./images/books-1.jpg" alt="single book and cd">
-						<div class="single-book_download">
-							<img src="./images/download.svg" alt="book image">
-						</div>
-					</a>
-					<h4 class="single-book__title">Olivani</h4>
-					<span class="single-book__price">$15.00</span>
-					<!-- star rating -->
-					<div class="rating">
-						<span>&#9734;</span>
-						<span>&#9734;</span>
-						<span>&#9734;</span>
-						<span>&#9734;</span>
-						<span>&#9734;</span>
-					</div>
-					<!-- star rating end -->
-				</div>
-				<div class="single-book">
-					<a href="#" class="single-book__img">
-						<img src="./images/books-2.jpg" alt="single book and cd">
-						<div class="single-book_download">
-							<img src="./images/download.svg" alt="book image">
-						</div>
-					</a>
-					<h4 class="single-book__title">Molleon’s Life</h4>
-					<span class="single-book__price">$22.00</span>
-					<!-- star rating -->
-					<div class="rating">
-						<span>&#9734;</span>
-						<span>&#9734;</span>
-						<span>&#9734;</span>
-						<span>&#9734;</span>
-						<span>&#9734;</span>
-					</div>
-					<!-- star rating end -->
-				</div>
-				<div class="single-book">
-					<a href="#" class="single-book__img">
-						<img src="./images/books-3.jpg" alt="single book and cd">
-						<div class="single-book_download">
-							<img src="./images/download.svg" alt="book image">
-						</div>
-					</a>
-					<h4 class="single-book__title">Love is Love</h4>
-					<span class="single-book__price">$25.00</span>
-				</div>
-				<div class="single-book">
-					<a href="#" class="single-book__img">
-						<img src="./images/books-4.jpg" alt="single book and cd">
-						<div class="single-book_download">
-							<img src="./images/download.svg" alt="book image">
-						</div>
-					</a>
-					<h4 class="single-book__title">Give Me Also</h4>
-					<span class="single-book__price">$30.00</span>
-				</div>
-			</div>
-			<div class="books-brand-button">
-				<a href="#" class="brand-button">View more</a>
-			</div>
-		</div>
-	</section>
-	<!-- Books and CD end  arch -->
+	<!-- My Projects Section arch -->
+<section class="fh5co-books">
+    <div class="site-container">
+        <h2 class="universal-h2 universal-h2-bckg">My Portfolio</h2>
+
+        <div class="books">
+
+            <div class="single-book" onclick="openProject('cyber')">
+                <div class="single-book__img">
+                    <img src="./images/cyber.jpeg" alt="Cybersecurity">
+                </div>
+                <h4 class="single-book__title">Cybersecurity</h4>
+                <span class="single-book__price">Click to view project</span>
+            </div>
+
+            <div class="single-book" onclick="openProject('devops')">
+                <div class="single-book__img">
+                    <img src="./images/devops.jpeg" alt="DevOps">
+                </div>
+                <h4 class="single-book__title">DevOps</h4>
+                <span class="single-book__price">Click to view project</span>
+            </div>
+
+			  <div class="single-book" onclick="openProject('cloud')">
+                <div class="single-book__img">
+                    <img src="./images/cloud.jpeg" alt="Cloud_Computing">
+                </div>
+                <h4 class="single-book__title">Cloud_Computing</h4>
+                <span class="single-book__price">Click to view project</span>
+            </div>
+           
+			<div class="single-book" onclick="openProject('software')">
+                <div class="single-book__img">
+                    <img src="./images/software.jpeg" alt="Software_Development">
+                </div>
+                <h4 class="single-book__title">Software_Development</h4>
+                <span class="single-book__price">Click to view project</span>
+            </div>
+        </div>
+        
+        <!-- View More Button -->
+        <div class="view-more-container">
+            <a href="projects.html" class="view-more-btn">View More Projects</a>
+        </div>
+    </div>
+</section>    
+	<!-- project end  arch -->
 
 	<!-- Counter success -->
 	<div class="fh5co-counter counters">
@@ -342,5 +320,20 @@
 	<script src="js/slick.min.js"></script>
 	<script src="js/main.js"></script>
 
+
+     
+    <!-- Modern Project Modal arch -->
+<div id="projectModal" class="project-modal">
+
+    <div class="project-panel">
+
+        <span class="close-btn" onclick="closeProject()">×</span>
+
+        <h2 id="projectTitle"></h2>
+        <p id="projectDetails"></p>
+
+    </div>
+
+</div>
 </body>
 </html>
