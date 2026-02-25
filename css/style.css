@@ -865,28 +865,34 @@
 
 /* omale start userwork */
 
-/* Resume Section Background */
+/* =========================================
+   SUCCESS OPARA - RESUME & PORTFOLIO SECTION
+   ========================================= */
+
 .success-resume-section {
-    background-color: #1a1a1a; 
-    padding: 100px 0;
+    background-color: #1a1a1a;
+    padding: 80px 0;
     color: #ffffff;
+    font-family: 'Poppins', sans-serif;
 }
 
 .resume-main-title {
     text-align: center;
-    font-size: 40px;
-    font-weight: 700;
-    margin-bottom: 60px;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .resume-main-title span {
-    color: #ffffff;
-    text-decoration: underline;
+    color: #c18f59; /* Gold accent */
 }
 
+/* Grid Layout */
 .success-grid {
     display: flex;
     gap: 40px;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
@@ -896,85 +902,203 @@
 }
 
 .column-title {
-    font-size: 28px;
+    font-size: 1.8rem;
     margin-bottom: 30px;
-    font-weight: 400;
+    border-bottom: 2px solid #c18f59;
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
-/* The Outlined Card Style */
+/* Resume Cards */
 .resume-card {
-    border: 2px solid #444; 
-    padding: 30px;
+    background: #252525;
+    padding: 25px;
     margin-bottom: 25px;
+    border-left: 4px solid #c18f59;
     border-radius: 5px;
-    background: transparent;
-    /* Transition placed here for smooth entry and exit of hover state */
-    transition: transform 0.3s ease, border-color 0.3s ease; 
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .resume-card:hover {
-    border-color: #ffffff;
-    transform: translateY(-5px); 
+    transform: translateY(-5px);
+    background: #2d2d2d;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
 .card-date {
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: bold;
     display: block;
-    margin-bottom: 15px;
-}
-
-.card-role {
-    font-size: 22px;
-    margin-bottom: 15px;
+    color: #c18f59;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
     font-weight: 600;
 }
 
+.card-role {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
 .card-text {
-    color: #999; 
+    font-size: 0.95rem;
     line-height: 1.6;
+    color: #cccccc;
     margin-bottom: 15px;
 }
 
 .card-org {
-    color: #ffffff;
-    font-size: 16px;
-    display: block;
+    font-style: italic;
+    color: #888;
+    font-size: 0.85rem;
 }
 
-/* Tech Stack Icons */
+/* NEW: Action Buttons (CV & LinkedIn) */
+.resume-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.resume-btn {
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.cv-btn {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.cv-btn:hover {
+    background-color: #ffffff;
+    color: #1a1a1a;
+}
+
+.link-btn {
+    background-color: #0077b5; /* LinkedIn Blue */
+    border: 2px solid #0077b5;
+    color: #ffffff;
+}
+
+.link-btn:hover {
+    background-color: #005582;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 119, 181, 0.4);
+}
+
+/* Tech Stack Section */
+.skills-mini-section {
+    margin-top: 60px;
+    text-align: center;
+}
+
 .tech-icons-row {
     display: flex;
     justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
     margin-top: 20px;
 }
 
 .tech-icons-row img {
-    width: 40px;
-    opacity: 0.7;
-    transition: opacity 0.3s;
+    width: 45px;
+    height: 45px;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
 }
 
 .tech-icons-row img:hover {
-    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.2);
 }
 
-/* Responsive Stacking */
+/* Responsive */
 @media (max-width: 768px) {
     .success-grid {
         flex-direction: column;
     }
-    
     .resume-main-title {
-        font-size: 32px;
+        font-size: 2rem;
     }
 }
 
-.skills-mini-section {
-    text-align: center;
-    margin-top: 60px;
+/* Styling for Success Opara's Multi-Faceted Role */
+.resume-card {
+    border-top: 1px solid rgba(193, 143, 89, 0.2); /* Subtle gold top border */
+}
+
+.letter-card {
+    background: linear-gradient(145deg, #252525, #1e1e1e);
+    border-left: 4px solid #ffffff;
+}
+
+.letter-card .card-text {
+    font-size: 1rem;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.resume-actions .resume-btn i {
+    font-size: 1.2rem;
+}
+
+/* Ensure strong tags in the cards use the gold accent */
+.resume-card strong {
+    color: #c18f59;
+}
+
+/* Adjust button text color for the CV button hover to stay visible */
+.cv-btn:hover {
+    background-color: #c18f59; /* Match your gold accent on hover */
+    border-color: #c18f59;
+    color: #1a1a1a;
+}
+
+/* Styling for lists inside the resume cards */
+.resume-card ul.card-text {
+    list-style-type: none;
+    margin-bottom: 15px;
+}
+
+.resume-card ul.card-text li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.4;
+}
+
+.resume-card ul.card-text li::before {
+    content: "▹"; /* Small arrow bullet */
+    position: absolute;
+    left: 0;
+    color: #c18f59; /* Your Gold Accent */
+    font-weight: bold;
+}
+
+/* Enhancing Strong tags for better readability on dark background */
+.resume-card strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Style for icons next to headers */
+.card-date i {
+    margin-right: 8px;
+    font-size: 1rem;
 }
 /* omale ends */
 
