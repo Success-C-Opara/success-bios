@@ -416,7 +416,10 @@
   @media (max-width: 559px) {
     .books {
       justify-content: space-around; } }
-
+/* #proj {
+    background-color: #5c5e5f98; 
+}
+    */
 .single-book {
   margin-bottom: 20px;
   text-align: center; }
@@ -946,6 +949,10 @@
 .view-more-btn:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* arch ends*/
