@@ -954,7 +954,7 @@
 
 /* omale start userwork */
 /* =========================================
-   SUCCESS OPARA - RESUME & PORTFOLIO SECTION
+   SUCCESS OPARA - COMPLETE UNIFIED STYLE
    ========================================= */
 
 .success-resume-section {
@@ -969,26 +969,25 @@
     font-size: 2.5rem;
     margin-bottom: 50px;
     text-transform: uppercase;
-    letter-spacing: 2px;
     font-weight: 700;
 }
 
-.resume-main-title span {
-    color: #c18f59; /* Gold accent preserved */
-    text-decoration: none;
-}
+.resume-main-title span { color: #c18f59; }
 
-/* Grid Layout */
+/* Grid Layout - This keeps them side-by-side */
 .success-grid {
     display: flex;
     gap: 40px;
     justify-content: space-between;
     flex-wrap: wrap;
+    align-items: stretch;
 }
 
 .success-column {
     flex: 1;
-    min-width: 300px;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
 }
 
 .column-title {
@@ -999,161 +998,39 @@
     padding-bottom: 5px;
 }
 
-/* Resume Cards */
+/* Resume Cards Styling */
 .resume-card {
     background: #252525;
-    padding: 25px;
-    margin-bottom: 25px;
+    padding: 20px;
+    margin-bottom: 20px;
     border-left: 4px solid #c18f59;
     border-radius: 5px;
-    transition: all 0.3s ease;
-    position: relative;
-    border-top: 1px solid rgba(193, 143, 89, 0.2);
+    transition: 0.3s;
 }
 
 .resume-card:hover {
     transform: translateY(-5px);
-    background: #2d2d2d;
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    border-color: #ffffff;
 }
 
-.card-date {
-    display: block;
-    color: #c18f59;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-.card-date i {
-    margin-right: 8px;
-    font-size: 1rem;
-}
-
-.card-role {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.card-text {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #cccccc;
-    margin-bottom: 15px;
-}
-
-.card-org {
-    font-style: italic;
-    color: #888;
-    font-size: 0.85rem;
-    display: block;
-}
-
-/* Action Buttons (CV & LinkedIn) */
-.resume-actions {
+.compressed-letter {
+    flex-grow: 1;
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 50px;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
-.resume-btn {
-    padding: 15px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.3s ease;
-}
+.card-date { color: #c18f59; font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 5px; }
+.card-role { font-size: 1.1rem; color: #ffffff; margin: 10px 0 5px; font-weight: 600; }
+.card-text { font-size: 0.9rem; line-height: 1.6; color: #cccccc; margin-bottom: 10px; }
+.resume-card strong { color: #c18f59; }
 
-.cv-btn {
-    background-color: transparent;
-    border: 2px solid #ffffff;
-    color: #ffffff;
-}
-
-.cv-btn:hover {
-    background-color: #c18f59;
-    border-color: #c18f59;
-    color: #1a1a1a;
-}
-
-.link-btn {
-    background-color: #0077b5;
-    border: 2px solid #0077b5;
-    color: #ffffff;
-}
-
-.link-btn:hover {
-    background-color: #005582;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 119, 181, 0.4);
-}
-
-/* Tech Stack Icons */
-.skills-mini-section {
-    text-align: center;
-    margin-top: 60px;
-}
-
-.tech-icons-row {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-}
-
-.tech-icons-row img {
-    width: 45px;
-    height: 45px;
-    filter: grayscale(100%);
-    opacity: 0.7;
-    transition: all 0.3s ease;
-}
-
-.tech-icons-row img:hover {
-    filter: grayscale(0%);
-    opacity: 1;
-    transform: scale(1.2);
-}
-
-/* Special styling for the Cover Letter Card */
-.letter-card {
-    background: linear-gradient(145deg, #252525, #1e1e1e);
-    border-left: 4px solid #ffffff;
-}
-
-.letter-card .card-text {
-    font-size: 1rem;
-    color: #e0e0e0;
-    text-align: justify;
-}
-
-/* Helpers */
-.resume-card strong {
-    color: #c18f59;
-    font-weight: 600;
-}
-
-.resume-card ul.card-text {
-    list-style-type: none;
-    padding-left: 0;
-}
-
+/* Bullet Points */
+.resume-card ul.card-text { list-style: none; padding-left: 0; }
 .resume-card ul.card-text li {
     position: relative;
     padding-left: 20px;
     margin-bottom: 8px;
 }
-
 .resume-card ul.card-text li::before {
     content: "▹";
     position: absolute;
@@ -1161,14 +1038,64 @@
     color: #c18f59;
 }
 
-/* Responsive */
+/* Action Buttons */
+.resume-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 50px 0 30px;
+    flex-wrap: wrap;
+}
+
+.resume-btn {
+    min-width: 220px;
+    padding: 14px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.cv-btn { border: 2px solid #ffffff; color: #ffffff; }
+.cv-btn:hover { background: #ffffff; color: #1a1a1a; }
+.link-btn { background: #0077b5; color: #ffffff; border: 2px solid #0077b5; }
+.link-btn:hover { background: #005582; transform: translateY(-3px); }
+
+/* Social Icons Section */
+.success-footer-minimal {
+    margin-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.footer-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c18f59, transparent);
+    width: 50%;
+    margin: 0 auto 25px;
+}
+
+.social-content { display: flex; flex-direction: column; gap: 15px; }
+.social-text-labels { font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; }
+.label-gold { color: #c18f59; margin-right: 15px; }
+.label-white { color: #ffffff; }
+
+.social-icon-links { display: flex; justify-content: center; gap: 25px; }
+.social-icon-links a {
+    color: #ffffff;
+    font-size: 1.6rem;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.social-icon-links a:hover { color: #c18f59; transform: translateY(-5px); }
+
+/* Mobile View */
 @media (max-width: 768px) {
-    .success-grid {
-        flex-direction: column;
-    }
-    .resume-main-title {
-        font-size: 2rem;
-    }
+    .success-grid { flex-direction: column; }
+    .resume-main-title { font-size: 2rem; }
 }
 /* omale ends */
 
