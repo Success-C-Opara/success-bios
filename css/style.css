@@ -953,116 +953,44 @@
 /* success ends */
 
 /* omale start userwork */
-<style>
-    /* 1. THE GENERAL DESIGN */
+style>
     .success-hub { background-color: #080808; padding: 80px 0; color: #ffffff; font-family: 'Poppins', sans-serif; }
     .site-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-    /* FIXED: 4/3 CENTERED ARRANGEMENT - GUARANTEED */
     .persona-grid { 
-        display: flex; 
-        flex-wrap: wrap; 
-        gap: 15px; /* Slightly smaller gap to help fit 4 in a row */
-        margin-bottom: 50px; 
-        justify-content: center; 
+        display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 50px; justify-content: center; 
     }
 
     .intro-card { 
-        background: #121212; 
-        border: 1px solid #c18f59; 
-        padding: 20px 10px; 
-        border-radius: 8px; 
-        cursor: pointer; 
-        transition: 0.3s; 
-        text-align: center;
-        /* Forced 4 per row: 23% leaves enough room for the 15px gaps */
-        flex: 0 1 calc(23%); 
-        box-sizing: border-box;
+        background: #121212; border: 1px solid #c18f59; padding: 20px 10px; border-radius: 8px; 
+        cursor: pointer; transition: 0.3s; text-align: center; flex: 0 1 calc(23%); 
+        min-width: 240px; box-sizing: border-box; display: flex; flex-direction: column;
+        justify-content: center; min-height: 125px; 
     }
-
     .intro-card:hover { background: #c18f59; color: #000; }
-    .intro-card h3 { font-size: 0.8rem; text-transform: uppercase; margin: 0; font-weight: 700; letter-spacing: 1px;}
-    .intro-card p { font-size: 0.65rem; margin-top: 8px; font-weight: bold; color: #c18f59; transition: 0.3s; }
-    .intro-card:hover p { color: #000; }
+    .intro-card h3 { font-size: 0.78rem; text-transform: uppercase; margin: 0; font-weight: 700; letter-spacing: 0.5px; line-height: 1.4; }
+    .intro-card p { font-size: 0.65rem; margin-top: 10px; font-weight: bold; color: #c18f59; }
 
     .full-details { display: none; margin-top: 30px; padding-top: 40px; }
     
-    /* 2. THE GRID & THE VERTICAL LINE FIX */
-    .success-grid { 
-        display: flex; 
-        gap: 40px; 
-        flex-wrap: wrap; 
-        position: relative;
-    }
-
-    .success-grid::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 0;
-        bottom: 0; 
-        width: 1px;
-        background: rgba(255, 255, 255, 0.2);
-        transform: translateX(-50%);
-    }
+    .success-grid { display: flex; gap: 40px; flex-wrap: wrap; position: relative; }
+    .success-grid::after { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: rgba(255, 255, 255, 0.2); transform: translateX(-50%); }
     
     .success-column { flex: 1; min-width: 450px; z-index: 1; }
-    
-    .resume-box, .letter-box { 
-        background: #121212; padding: 40px; border-radius: 10px; 
-        border-left: 5px solid #c18f59; height: 100%;
-    }
+    .resume-box, .letter-box { background: #121212; padding: 40px; border-radius: 10px; border-left: 5px solid #c18f59; height: 100%; }
 
     .highlight { color: #c18f59; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; display: block; margin-bottom: 15px; }
-    .card-title { font-size: 1.4rem; margin-bottom: 20px; color: #fff; text-transform: uppercase; border-bottom: 1px solid #222; padding-bottom: 10px;}
+    .card-title { font-size: 1.3rem; margin-bottom: 20px; color: #fff; text-transform: uppercase; border-bottom: 1px solid #222; padding-bottom: 10px;}
     .detail-text { font-size: 0.92rem; line-height: 1.8; color: #ccc; margin-bottom: 15px; }
 
-    /* 3. THE BUTTON AREA - FIXED */
     .button-center-wrapper { 
-        width: 100%; 
-        display: flex; 
-        justify-content: center; 
-        gap: 20px; 
-        padding: 60px 0 20px 0; 
-        position: relative;
-        z-index: 10;
-        background-color: #080808; /* Acts as a mask for the line */
-        border-top: 1px solid rgba(255, 255, 255, 0.1); 
-        margin-top: 20px;
+        width: 100%; display: flex; justify-content: center; gap: 20px; padding: 60px 0 20px 0; 
+        position: relative; z-index: 10; background-color: #080808; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 20px;
     }
-
-    .resume-btn { 
-        text-decoration: none; padding: 15px 35px; font-weight: 700; border-radius: 4px; 
-        text-transform: uppercase; color: #c18f59; border: 2px solid #c18f59; transition: 0.3s;
-        font-size: 0.85rem; background: #121212;
-    }
+    .resume-btn { text-decoration: none; padding: 15px 35px; font-weight: 700; border-radius: 4px; text-transform: uppercase; color: #c18f59; border: 2px solid #c18f59; transition: 0.3s; font-size: 0.85rem; background: #121212; }
     .resume-btn:hover { background: #c18f59; color: #000; }
 
-    /* 4. THE FOOTER */
-    .footer-social-section { 
-        display: flex; justify-content: space-between; align-items: center; 
-        margin-top: 60px; padding: 30px 0; border-top: 1px solid #222; 
-    }
-    .social-icons-wrapper { display: flex; gap: 15px; }
-    .social-icon { 
-        width: 45px; height: 45px; background: #54d1db; color: #fff; 
-        border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; 
-    }
-
-    /* RESPONSIVE FIXES */
-    @media (max-width: 1024px) {
-        .intro-card { flex: 0 1 calc(45%); } /* 2 per row on tablets */
-    }
-
-    @media (max-width: 900px) { 
-        .success-column { min-width: 100%; } 
-        .success-grid::after { display: none; }
-        .footer-social-section { flex-direction: column; gap: 20px; text-align: center; }
-    }
-
-    @media (max-width: 600px) {
-        .intro-card { flex: 0 1 100%; } /* 1 per row on mobile */
-    }
+    @media (max-width: 900px) { .success-column { min-width: 100%; } .success-grid::after { display: none; } }
 </style>
 /* omale ends */
 
