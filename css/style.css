@@ -953,216 +953,117 @@
 /* success ends */
 
 /* omale start userwork */
-.success-resume-section { 
-    background-color: #080808; 
-    padding: 80px 0; 
-    color: #ffffff; 
-    font-family: 'Poppins', sans-serif; 
-    overflow: hidden; 
-}
+<style>
+    /* 1. THE GENERAL DESIGN */
+    .success-hub { background-color: #080808; padding: 80px 0; color: #ffffff; font-family: 'Poppins', sans-serif; }
+    .site-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-.site-container { 
-    max-width: 1200px; 
-    margin: 0 auto; 
-    padding: 0 20px; 
-}
+    /* FIXED: 4/3 CENTERED ARRANGEMENT - GUARANTEED */
+    .persona-grid { 
+        display: flex; 
+        flex-wrap: wrap; 
+        gap: 15px; /* Slightly smaller gap to help fit 4 in a row */
+        margin-bottom: 50px; 
+        justify-content: center; 
+    }
 
-/* --- CENTERED HEADING --- */
-.resume-main-title { 
-    width: 100%; 
-    text-align: center; 
-    font-size: 2.5rem; 
-    font-weight: 800; 
-    margin-bottom: 50px; 
-    text-transform: uppercase; 
-    display: block; 
-}
+    .intro-card { 
+        background: #121212; 
+        border: 1px solid #c18f59; 
+        padding: 20px 10px; 
+        border-radius: 8px; 
+        cursor: pointer; 
+        transition: 0.3s; 
+        text-align: center;
+        /* Forced 4 per row: 23% leaves enough room for the 15px gaps */
+        flex: 0 1 calc(23%); 
+        box-sizing: border-box;
+    }
 
-.resume-main-title::after { 
-    content: ""; 
-    display: block; 
-    width: 60px; 
-    height: 4px; 
-    background: #c18f59; 
-    margin: 15px auto 0; 
-}
+    .intro-card:hover { background: #c18f59; color: #000; }
+    .intro-card h3 { font-size: 0.8rem; text-transform: uppercase; margin: 0; font-weight: 700; letter-spacing: 1px;}
+    .intro-card p { font-size: 0.65rem; margin-top: 8px; font-weight: bold; color: #c18f59; transition: 0.3s; }
+    .intro-card:hover p { color: #000; }
 
-/* --- TWO-COLUMN GRID --- */
-.success-grid { 
-    display: flex; 
-    gap: 40px; 
-    flex-wrap: wrap; 
-    margin-bottom: 50px; 
-}
+    .full-details { display: none; margin-top: 30px; padding-top: 40px; }
+    
+    /* 2. THE GRID & THE VERTICAL LINE FIX */
+    .success-grid { 
+        display: flex; 
+        gap: 40px; 
+        flex-wrap: wrap; 
+        position: relative;
+    }
 
-.success-column { 
-    flex: 1; 
-    min-width: 350px; 
-}
+    .success-grid::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0; 
+        width: 1px;
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateX(-50%);
+    }
+    
+    .success-column { flex: 1; min-width: 450px; z-index: 1; }
+    
+    .resume-box, .letter-box { 
+        background: #121212; padding: 40px; border-radius: 10px; 
+        border-left: 5px solid #c18f59; height: 100%;
+    }
 
-.column-title { 
-    font-size: 1.4rem; 
-    font-weight: 900; 
-    color: #c18f59; 
-    border-bottom: 2px solid #c18f59; 
-    padding-bottom: 10px; 
-    margin-bottom: 25px; 
-    text-transform: uppercase; 
-}
+    .highlight { color: #c18f59; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; display: block; margin-bottom: 15px; }
+    .card-title { font-size: 1.4rem; margin-bottom: 20px; color: #fff; text-transform: uppercase; border-bottom: 1px solid #222; padding-bottom: 10px;}
+    .detail-text { font-size: 0.92rem; line-height: 1.8; color: #ccc; margin-bottom: 15px; }
 
-/* --- RESUME & LETTER CARDS --- */
-.resume-card { 
-    background: #121212; 
-    padding: 25px; 
-    border-radius: 4px; 
-    margin-bottom: 20px; 
-    border-left: 4px solid #c18f59; /* The gold accent border */
-}
+    /* 3. THE BUTTON AREA - FIXED */
+    .button-center-wrapper { 
+        width: 100%; 
+        display: flex; 
+        justify-content: center; 
+        gap: 20px; 
+        padding: 60px 0 20px 0; 
+        position: relative;
+        z-index: 10;
+        background-color: #080808; /* Acts as a mask for the line */
+        border-top: 1px solid rgba(255, 255, 255, 0.1); 
+        margin-top: 20px;
+    }
 
-.card-label { 
-    display: block; 
-    font-size: 0.75rem; 
-    font-weight: 800; 
-    color: #c18f59; 
-    text-transform: uppercase; 
-    margin-bottom: 10px; 
-}
+    .resume-btn { 
+        text-decoration: none; padding: 15px 35px; font-weight: 700; border-radius: 4px; 
+        text-transform: uppercase; color: #c18f59; border: 2px solid #c18f59; transition: 0.3s;
+        font-size: 0.85rem; background: #121212;
+    }
+    .resume-btn:hover { background: #c18f59; color: #000; }
 
-.card-text { 
-    font-size: 0.95rem; 
-    line-height: 1.7; 
-    color: #e0e0e0; 
-    margin-bottom: 15px; 
-}
+    /* 4. THE FOOTER */
+    .footer-social-section { 
+        display: flex; justify-content: space-between; align-items: center; 
+        margin-top: 60px; padding: 30px 0; border-top: 1px solid #222; 
+    }
+    .social-icons-wrapper { display: flex; gap: 15px; }
+    .social-icon { 
+        width: 45px; height: 45px; background: #54d1db; color: #fff; 
+        border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; 
+    }
 
-.card-role { 
-    font-size: 1.1rem; 
-    font-weight: 700; 
-    color: #ffffff; 
-    margin-bottom: 8px; 
-}
+    /* RESPONSIVE FIXES */
+    @media (max-width: 1024px) {
+        .intro-card { flex: 0 1 calc(45%); } /* 2 per row on tablets */
+    }
 
-.card-list { 
-    padding-left: 20px; 
-    margin-top: 10px; 
-}
+    @media (max-width: 900px) { 
+        .success-column { min-width: 100%; } 
+        .success-grid::after { display: none; }
+        .footer-social-section { flex-direction: column; gap: 20px; text-align: center; }
+    }
 
-.card-list li { 
-    font-size: 0.9rem; 
-    color: #bbb; 
-    margin-bottom: 8px; 
-}
-
-.signature { 
-    margin-top: 20px; 
-    font-size: 1rem; 
-    color: #c18f59; 
-}
-
-/* --- ACTION BUTTONS (NO ICONS) --- */
-.resume-actions { 
-    display: flex; 
-    justify-content: center; 
-    gap: 20px; 
-    margin-bottom: 60px; 
-    flex-wrap: wrap; 
-}
-
-.resume-btn { 
-    text-decoration: none; 
-    padding: 15px 35px; 
-    font-weight: 700; 
-    border-radius: 4px; 
-    text-transform: uppercase; 
-    transition: 0.3s; 
-    color: #fff; 
-    border: 2px solid #fff; 
-    display: inline-block;
-}
-
-.cv-btn { 
-    background: #c18f59; 
-    border-color: #c18f59; 
-    color: #000; 
-}
-
-.cv-btn:hover { 
-    background: transparent; 
-    color: #c18f59; 
-}
-
-.link-btn:hover { 
-    background: #fff; 
-    color: #000; 
-}
-
-/* --- FOOTER FIX --- */
-.success-footer-minimal { 
-    text-align: center; 
-    margin-top: 60px; 
-    width: 100%; 
-    position: relative; 
-    clear: both; 
-}
-
-.footer-divider { 
-    height: 1px; 
-    background: linear-gradient(90deg, transparent, #c18f59, transparent); 
-    margin-bottom: 30px; 
-}
-
-.social-labels { 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    gap: 10px; 
-    margin-bottom: 20px; 
-}
-
-.follow-text { 
-    color: #c18f59; 
-    font-weight: 800; 
-    font-size: 1.5rem; 
-}
-
-.share-text { 
-    color: #fff; 
-    font-size: 1.5rem; 
-    font-style: italic; 
-}
-
-.social-icon-row { 
-    display: flex; 
-    justify-content: center; 
-    gap: 15px; 
-}
-
-.social-icon { 
-    width: 50px; 
-    height: 50px; 
-    border: 2px solid #00eeee; /* The Cyan Blue Circle */
-    border-radius: 50%; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    color: #fff; 
-    transition: 0.3s; 
-    text-decoration: none; 
-    font-size: 1.2rem; 
-}
-
-.social-icon:hover { 
-    background: #00eeee; 
-    color: #000; 
-    transform: translateY(-5px); 
-}
-
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) { 
-    .success-column { min-width: 100%; } 
-    .resume-main-title { font-size: 1.8rem; } 
-}
-
+    @media (max-width: 600px) {
+        .intro-card { flex: 0 1 100%; } /* 1 per row on mobile */
+    }
+</style>
 /* omale ends */
 
 
