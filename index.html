@@ -233,16 +233,15 @@ Professionally, he is ambitious and disciplined. He believes in growth, self-imp
 	<!-- Blog end success -->
 
 	<!-- Quotes omlae -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
     /* 1. GENERAL DESIGN */
     .success-hub { background-color: #080808; padding: 80px 0; color: #ffffff; font-family: 'Poppins', sans-serif; }
     .site-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-    /* 2. THE 4/3 CENTERED GRID - STABLE FOR VARIED TITLES */
-    .persona-grid { 
-        display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 50px; justify-content: center; 
-    }
-
+    /* 2. THE 4/3 CENTERED GRID */
+    .persona-grid { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 50px; justify-content: center; }
     .intro-card { 
         background: #121212; border: 1px solid #c18f59; padding: 20px 10px; border-radius: 8px; 
         cursor: pointer; transition: 0.3s; text-align: center; flex: 0 1 calc(23%); 
@@ -262,7 +261,6 @@ Professionally, he is ambitious and disciplined. He believes in growth, self-imp
         content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px;
         background: rgba(255, 255, 255, 0.2); transform: translateX(-50%);
     }
-    
     .success-column { flex: 1; min-width: 450px; z-index: 1; }
     .resume-box, .letter-box { background: #121212; padding: 40px; border-radius: 10px; border-left: 5px solid #c18f59; height: 100%; }
 
@@ -270,7 +268,7 @@ Professionally, he is ambitious and disciplined. He believes in growth, self-imp
     .card-title { font-size: 1.3rem; margin-bottom: 20px; color: #fff; text-transform: uppercase; border-bottom: 1px solid #222; padding-bottom: 10px;}
     .detail-text { font-size: 0.92rem; line-height: 1.8; color: #ccc; margin-bottom: 15px; }
 
-    /* 4. BUTTONS & LINE MASK */
+    /* 4. BUTTONS */
     .button-center-wrapper { 
         width: 100%; display: flex; justify-content: center; gap: 20px; padding: 60px 0 20px 0; 
         position: relative; z-index: 10; background-color: #080808; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 20px;
@@ -282,7 +280,32 @@ Professionally, he is ambitious and disciplined. He believes in growth, self-imp
     }
     .resume-btn:hover { background: #c18f59; color: #000; }
 
-    @media (max-width: 900px) { .success-column { min-width: 100%; } .success-grid::after { display: none; } }
+    /* 5. FOOTER GRID SYSTEM */
+    .footer-social-section {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        margin-top: 60px;
+        padding: 30px 0;
+        border-top: 1px solid #222;
+    }
+
+    .footer-link-text {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #fff;
+        letter-spacing: 1px;
+        transition: 0.3s;
+    }
+    .footer-link-text:hover { color: #c18f59; }
+
+    @media (max-width: 900px) { 
+        .success-column { min-width: 100%; } 
+        .success-grid::after { display: none; }
+        .footer-social-section { grid-template-columns: 1fr; gap: 25px; text-align: center; }
+        .footer-social-section div { text-align: center !important; }
+    }
 </style>
 
 <section class="success-hub">
@@ -300,14 +323,26 @@ Professionally, he is ambitious and disciplined. He believes in growth, self-imp
         </div>
 
         <div id="role-display-area"></div>
-
-        <div class="footer-social-section" style="display:flex; justify-content:space-between; align-items:center; margin-top:60px; padding:30px 0; border-top:1px solid #222;">
-            <div style="font-weight:bold; font-size:1.1rem; color:#fff;">Follow me!!</div>
-            <div style="display:flex; gap:15px;">
-                <a href="#" style="width:45px; height:45px; background:#54d1db; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none;"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/success-opara-00773621a" target="_blank" style="width:45px; height:45px; background:#54d1db; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none;"><i class="fab fa-linkedin-in"></i></a>
+        
+        <div class="footer-social-section">
+            <div style="text-align: left;">
+                <a href="https://www.linkedin.com/in/success-opara-00773621a" target="_blank" class="footer-link-text">
+                    CONNECT WITH SUCCESS
+                </a>
             </div>
-            <div style="font-weight:bold; font-size:1.1rem; color:#fff;">Share it!</div>
+
+            <div style="display:flex; gap:15px; justify-content: center;">
+                <a href="#" style="width:45px; height:45px; background:#1DA1F2; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none;"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="width:45px; height:45px; background:#FF0000; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none;"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/in/success-opara-00773621a" target="_blank" style="width:45px; height:45px; background:#0077b5; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none;"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" style="width:45px; height:45px; background:#1877F2; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none;"><i class="fab fa-facebook-f"></i></a>
+            </div>
+
+            <div style="text-align: right;">
+                <a href="https://www.linkedin.com/in/success-opara-00773621a" target="_blank" class="footer-link-text">
+                    SHARE IT!
+                </a>
+            </div>
         </div>
     </div>
 </section>

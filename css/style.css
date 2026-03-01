@@ -991,6 +991,20 @@ style>
     .resume-btn:hover { background: #c18f59; color: #000; }
 
     @media (max-width: 900px) { .success-column { min-width: 100%; } .success-grid::after { display: none; } }
+
+    /* --- SOCIAL ICONS STYLE --- */
+    .footer-social-section { 
+        display: flex; justify-content: space-between; align-items: center; 
+        margin-top: 60px; padding: 30px 0; border-top: 1px solid #222; 
+    }
+    .social-icons-wrapper { display: flex; gap: 15px; }
+    .social-icon { 
+        width: 45px; height: 45px; background: #c18f59; color: #000; 
+        border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+        text-decoration: none; transition: 0.3s; font-size: 1.2rem;
+    }
+    .social-icon:hover { background: #fff; transform: translateY(-3px); }
+    .social-label { font-weight: bold; font-size: 1.1rem; color: #fff; }
 </style>
 /* omale ends */
 
