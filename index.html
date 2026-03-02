@@ -23,11 +23,19 @@
 			<img src="./images/site-logo.png" alt="site logo">
 			<div class="main-navigation">
 				<ul class="main-navigation__ul">
+<<<<<<< HEAD
 					<li><a href="#">Homepage</a></li>
 					<li><a href="#">About</a></li>
 					<li><a href="#">Portfolio</a></li>
 					<li><a href="#">Page 3</a></li>
 					<li><a href="#">Page 4</a></li>
+=======
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About Me</a></li>
+					<li><a href="books.html">Books & CD</a></li>
+					<li><a href="blog.html">My Blog</a></li>
+					<li><a href="contact.html">Contact</a></li>
+>>>>>>> master
 				</ul>
 			</div>
 			<div id="myBtn" class="burger-container" onclick="myFunction(this)">
@@ -49,19 +57,19 @@
 	<section class="fh5co-top-banner">
 		<div class="top-banner__inner site-container">
 			<div class="top-banner__image">
-				<img src="./images/top-banner-author.jpg" alt="author image">
+				<img src="./images/mide-banner.png" alt="author image">
 			</div>
 			<div class="top-banner__text">
 				<div class="top-banner__text-up">
 					<span class="brand-span">Hello! I'm</span>
-					<h2 class="top-banner__h2">Jhone</h2>
+					<h2 class="top-banner__h2">Success</h2>
 				</div>
 				<div class="top-banner__text-down">
-					<h2 class="top-banner__h2">Smith</h2>
-					<span class="brand-span">Author, Writer, Traveler</span>
+					<h2 class="top-banner__h2">Opara</h2>
+					<span class="brand-span">PYTHON | JAVASCRIPT | DJANGO | PROGRAMMING | CLOUD ENGINEERING | AWS | SECURITY+ | CEH | NETWORKING+ | DevOps | CYBER SECURITY ANALYST (SOC) | C++ | Terraform | Cloud Formation | Data</span>
 				</div>
-				<p>One Man. One Mission. Can He Go Beyond?One Man. One Mission. Can He Go Beyond?</p>
-				<a href="#" class="brand-button">Read bio > </a>
+				<p>Building secure, scalable, and automated cloud solutions while driving innovation in software development, cybersecurity, and infrastructure engineering</p>
+				<a href="about.html" class="brand-button">Read bio > </a>
 			</div>
 		</div>
 	</section>
@@ -109,6 +117,7 @@ Professionally, he is ambitious and disciplined. He believes in growth, self-imp
 	</section>
 	<!-- About me end david -->
 
+<<<<<<< HEAD
 	<!-- Books and CD -->
 	<section class="fh5co-books">
 		<div class="site-container">
@@ -179,19 +188,72 @@ Professionally, he is ambitious and disciplined. He believes in growth, self-imp
 		</div>
 	</section>
 	<!-- Books and CD end -->
+=======
+	<!-- My Projects Section arch -->
+<section id="proj" class="fh5co-books">
+    <div class="site-container">
+        <h2 class="universal-h2 universal-h2-bckg">My Portfolio</h2>
+
+        <div class="slider-wrapper">
+            <button class="prev">&#10094;</button>
+
+            <div class="books">
+                <div class="single-book" onclick="openProject('cyber')">
+                    <div class="single-book__img">
+                        <img src="./images/cyber.jpeg" alt="Cybersecurity">
+                    </div>
+                    <h4 class="single-book__title">Cybersecurity</h4>
+                    <span class="single-book__price">Click to view project</span>
+                </div>
+
+                <div class="single-book" onclick="openProject('devops')">
+                    <div class="single-book__img">
+                        <img src="./images/devops.jpeg" alt="DevOps">
+                    </div>
+                    <h4 class="single-book__title">DevOps</h4>
+                    <span class="single-book__price">Click to view project</span>
+                </div>
+
+                <div class="single-book" onclick="openProject('cloud')">
+                    <div class="single-book__img">
+                        <img src="./images/cloud.jpeg" alt="Cloud_Computing">
+                    </div>
+                    <h4 class="single-book__title">Cloud_Computing</h4>
+                    <span class="single-book__price">Click to view project</span>
+                </div>
+
+                <div class="single-book" onclick="openProject('software')">
+                    <div class="single-book__img">
+                        <img src="./images/software.jpeg" alt="Software_Development">
+                    </div>
+                    <h4 class="single-book__title">Software_Development</h4>
+                    <span class="single-book__price">Click to view project</span>
+                </div>
+            </div>
+
+            <button class="next">&#10095;</button>
+        </div>
+
+        <div class="view-more-container">
+            <a href="projects.html" class="view-more-btn">View More Projects</a>
+        </div>
+    </div>
+</section>  
+	<!-- project end  arch -->
+>>>>>>> master
 
 	<!-- Counter success -->
 	<div class="fh5co-counter counters">
 		<div class="counter-inner site-container">
 			<div class="single-count">
-				<span class="count" data-count="50">0</span>
+				<span class="count" data-count="55">0</span>
 				<div class="single-count__text">
 					<img src="./images/counter-1.png" alt="counter icon">
 					<p>Books</p>
 				</div>
 			</div>
 			<div class="single-count">
-				<span class="count" data-count="600">0</span>
+				<span class="count" data-count="680">0</span>
 				<div class="single-count__text">
 					<img src="./images/counter-2.png" alt="counter icon">
 					<p>Pages</p>
@@ -564,14 +626,7 @@ function openRole(id) {
 	</footer>
 	<!-- Footer end david -->
 
-	<!-- Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/slick.min.js"></script>
-	<script src="js/main.js"></script>
-
-
-     
-    <!-- Modern Project Modal arch -->
+    <!-- Modern Project Modal arch starts-->
 <div id="projectModal" class="project-modal">
 
     <div class="project-panel">
@@ -582,6 +637,14 @@ function openRole(id) {
         <p id="projectDetails"></p>
 
     </div>
+    <!-- arch ends -->
+	<!-- Scripts -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/main.js"></script>
+
+
+   
 
 </div>
 </body>
