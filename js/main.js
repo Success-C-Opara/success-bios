@@ -117,4 +117,69 @@ document.getElementById("projectModal").addEventListener("click", function(e) {
     }
 });  
 
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const slider = document.querySelector('.books');
+    const slides = document.querySelectorAll('.single-book');
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+
+    let index = 0;
+
+    function updateSlider() {
+        slider.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        index++;
+        if (index >= slides.length) index = 0;
+        updateSlider();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        index--;
+        if (index < 0) index = slides.length - 1;
+        updateSlider();
+    });
+
+});
+const books = document.querySelector('.books');
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
+
+let index = 0;
+let itemsPerSlide = getItemsPerSlide();
+
+function getItemsPerSlide() {
+  if (window.innerWidth < 600) return 1;
+  if (window.innerWidth < 992) return 2;
+  return 3;
+}
+
+function updateSlider() {
+  itemsPerSlide = getItemsPerSlide();
+  const slideWidth = 100 / itemsPerSlide;
+  books.style.transform = `translateX(-${index * slideWidth}%)`;
+}
+
+next.addEventListener('click', () => {
+  const maxIndex = books.children.length - itemsPerSlide;
+  if (index < maxIndex) {
+    index++;
+    updateSlider();
+  }
+});
+
+prev.addEventListener('click', () => {
+  if (index > 0) {
+    index--;
+    updateSlider();
+  }
+});
+
+window.addEventListener('resize', () => {
+  index = 0;
+  updateSlider();
+});
 /* arch ends */

@@ -391,87 +391,220 @@
 .slick-slide:focus {
   outline: none; }
 
-.fh5co-books {
-  margin-bottom: 122px; }
-  .fh5co-books .universal-h2 {
-    margin-bottom: 50px;
-    padding-bottom: 20px; }
-  .fh5co-books .books-brand-button {
-    text-align: center; }
-    .fh5co-books .books-brand-button .brand-button {
-      font-size: 16px;
-      text-transform: none;
-      border-color: #c18f59; }
-      .fh5co-books .books-brand-button .brand-button:hover {
-        border-color: #777; }
-  @media (max-width: 1250px) {
-    .fh5co-books {
-      margin-bottom: 60px; } }
 
+/*arch starts*/
+/* ===== Projects Section ===== */
+
+.fh5co-books {
+  margin-bottom: 122px;
+}
+
+.fh5co-books .universal-h2 {
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 1250px) {
+  .fh5co-books {
+    margin-bottom: 60px;
+  }
+}
+
+/* ===== Slider Wrapper ===== */
+
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+/* Slider Track */
 .books {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-bottom: 70px; }
-  @media (max-width: 559px) {
-    .books {
-      justify-content: space-around; } }
-/* #proj {
-    background-color: #5c5e5f98; 
+  transition: transform 0.5s ease;
 }
-    */
+
+/* Each Slide */
+/* Show 2 projects per slide */
 .single-book {
-  margin-bottom: 20px;
-  text-align: center; }
-  .single-book .single-book__img {
-    position: relative;
-    display: block;
-    font-size: 0; }
-    .single-book .single-book__img .single-book_download {
-      opacity: 0;
-      visibility: hidden;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #000;
-      transition: 0.3s ease; }
-      .single-book .single-book__img .single-book_download img {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1; }
-    .single-book .single-book__img:hover .single-book_download {
-      visibility: visible;
-      opacity: 0.7; }
-  .single-book .single-book__title {
-    margin: 19px 0 18px;
-    font-size: 18px; }
-  .single-book .single-book__price {
-    font-size: 18px;
+    min-width: 50%; /* or whatever your slider uses */
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Optional: 3 per slide on large screens */
+@media (min-width: 992px) {
+  .single-book {
+    min-width: 33.33%;
+  }
+}
+
+.single-book__img img {
+    width: 100%;
+    max-width: 320px;   /* Increase this to make images bigger */
+    height: 220px;      /* Controls image height */
+    object-fit: cover;  /* Prevents distortion */
+    border-radius: 12px;
+    max-width: 350px;
+    height: 250px;
+}
+/* 1 per slide on small screens */
+@media (max-width: 600px) {
+  .single-book {
+    min-width: 100%;
+  }
+}
+.single-book {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+/* Image */
+.single-book__img {
+  position: relative;
+  display: block;
+  font-size: 0;
+}
+
+
+.single-book:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.single-book__title {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 20px;
     font-weight: 600;
-    font-style: italic;
-    color: #c18f59; }
-  @media (max-width: 1250px) {
-    .single-book {
-      margin-right: 10px; }
-      .single-book:last-child {
-        margin-right: 0; } }
+}
 
-.rating {
-  margin-top: 8px;
-  unicode-bidi: bidi-override;
-  direction: rtl; }
-  .rating span {
-    font-size: 23px;
-    color: #ffd200;
-    cursor: pointer; }
-  .rating > span:hover:before, .rating > span:hover ~ span:before {
-    content: "\2605";
-    position: absolute; }
+.single-book__price {
+    font-size: 16px;
+    color: #c18f59;
+    margin-top: 5px;
+}
 
+/* ===== Navigation Buttons ===== */
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+  background: #444;
+}
+
+/* ===== View More Button ===== */
+
+.view-more-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.view-more-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.view-more-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* ===== Modal ===== */
+
+.project-modal {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  transition: 0.4s ease;
+  z-index: 9999;
+}
+
+.project-modal.active {
+  right: 0;
+}
+
+.project-panel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #111;
+  color: #fff;
+  padding: 50px;
+  overflow-y: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.project-panel h2 {
+  margin-bottom: 20px;
+}
+
+.project-panel p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#proj {
+    background: #0f172a;
+    color: white;
+    padding: 80px 0;
+}
+#proj h2,
+#proj h4 {
+    color: white;
+}
+/*arch ends*/
 .fh5co-counter {
   position: relative;
   margin-bottom: 122px;
@@ -862,100 +995,7 @@
       .footer-bottom-inner p {
         font-size: 14px;
         margin-bottom: 20px; } }
-/* ===== MODERN SLIDE MODAL arch starts===== */
 
-.project-modal {
-    position: fixed;
-    top: 0;
-    right: -100%;   /* hidden outside screen */
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(5px);
-    transition: 0.4s ease;
-    z-index: 9999;
-}
-
-.project-modal.active {
-    right: 0;
-}
-
-.project-panel {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    background: #111;
-    color: #fff;
-    padding: 50px;
-    overflow-y: auto;
-}
-
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 28px;
-    cursor: pointer;
-}
-
-.project-panel h2 {
-    margin-bottom: 20px;
-}
-
-.project-panel p {
-    color: #ccc;
-    line-height: 1.6;
-}        
-
-.view-more-container {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.view-more-btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: #007BFF; /* Primary blue */
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: 0.3s ease;
-}
-
-.view-more-btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
-/* View More Projects Button */
-.view-more-container {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.view-more-btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: #007BFF;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: 0.3s ease;
-}
-
-.view-more-btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-/* arch ends*/
         /* success  user work*/
 /* success ends */
 
@@ -1073,11 +1113,6 @@ html {
     margin-top: 60px;
 }
 /* omale ends */
-
-
-/* arch user work */
-
-/* arch ends  */
 
 
 
